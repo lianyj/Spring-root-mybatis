@@ -12,13 +12,13 @@ public class HelloController {
 
 	@RequestMapping("/")
 	public String helloword(){
-		logger.debug("访问hello");
+		logger.info("访问hello");
 		return "Hello World";
 	}
 	
     @RequestMapping("/hello/{name}")  
     public String helloName(@PathVariable String name){  
-        logger.debug("访问helloName,Name={}",name);  
+        logger.info("访问helloName,Name={}",name);  
         return "Hello "+name;  
     }  
 }
