@@ -2,6 +2,8 @@ package com.example.rest;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,6 +22,7 @@ public class PersonResource {
 	@Autowired
 	private PersonService personService;
 	
+	private static Logger logger = LoggerFactory.getLogger(PersonResource.class);
 	
 	@RequestMapping("/add")
 	public String addPerson(String name,String address,Integer age){
@@ -134,8 +137,13 @@ public class PersonResource {
 
 	
 	@RequestMapping("/query/list")
-	public List<PersonRo> queryLIst(){
+	public List<PersonRo> queryLIst(Long id,String name,String address,Integer age){
 		PersonSo personSo = new PersonSo();
+		personSo.setId(id);
+		personSo.setName(name);
+		personSo.setAddress(address);
+		personSo.setAge(age);
+		logger.info("id: "+id+",name: "+name+",address: "+address+",age: "+age);
 		List<PersonRo> personRos = personService.selectPersonList(personSo);
 		return personRos;
 	}
