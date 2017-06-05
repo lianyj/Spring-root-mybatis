@@ -1,10 +1,9 @@
 package com.example.pojo.so;
 
-import java.io.Serializable;
-
 import com.zjtachao.framework.common.util.context.CommonContext.DeleteFlagContext;
+import com.zjtachao.framework.pojo.so.base.BaseSo;
 
-public class StudentSo implements Serializable {
+public class StudentSo extends BaseSo{
 
 	
 	/**
