@@ -33,6 +33,9 @@ public class MainController {
 	//登录后的页面
 	@RequestMapping("/")
 	public String index(@SessionAttribute(WebSecurityConfig.SESSION_KEY) String account, Model model) {
+		TestUserSo userSo = new TestUserSo();
+		List<TestUserRo> userRos = testUserService.selectUserList(userSo);
+		model.addAttribute("lists", userRos);
 		model.addAttribute("name", account);
 		return "index";
 	}

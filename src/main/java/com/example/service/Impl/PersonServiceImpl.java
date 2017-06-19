@@ -16,25 +16,25 @@ import com.example.util.constans.CommonConstant;
 public class PersonServiceImpl implements PersonService {
 
 	@Autowired
-	private PersonDao testPersonDao;
+	private PersonDao personDao;
 	
 	public void insertPerson(Person person){
-		testPersonDao.insertPerson(CommonConstant.INSERT_PERSON, person);
+		personDao.insertPerson(CommonConstant.INSERT_PERSON, person);
 	}
 	
 	public void updatePerson(Person person){
-		testPersonDao.updatePerson(CommonConstant.UPDATE_PERSON, person);
+		personDao.updatePerson(CommonConstant.UPDATE_PERSON, person);
 	}
 	
 	public void deletePerson(Person person){
-		testPersonDao.deletePerson(CommonConstant.DELETE_PERSON, person);
+		personDao.deletePerson(CommonConstant.DELETE_PERSON, person);
 	}
 	
 	public PersonRo selectSinglePerson(PersonSo personSo){
-		return testPersonDao.selectSinglePerson(CommonConstant.SELECT_SINGLE_PERSON, personSo);
+		return personDao.selectSinglePerson(CommonConstant.SELECT_SINGLE_PERSON, personSo);
 	}
 	
 	public List<PersonRo> selectPersonList(PersonSo personSo){
-		return testPersonDao.selectPersonList(CommonConstant.SELECT_PERSON_LIST, personSo);
+		return personDao.selectPersonList(CommonConstant.SELECT_PERSON_LIST, personSo);
 	}
 }

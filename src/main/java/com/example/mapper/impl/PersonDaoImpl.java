@@ -11,7 +11,7 @@ import com.example.pojo.domain.Person;
 import com.example.pojo.ro.PersonRo;
 import com.example.pojo.so.PersonSo;
 
-@Repository("testPersonDao")
+@Repository("personDao")
 public class PersonDaoImpl implements PersonDao {
 
 	/** mybatis服务 */
